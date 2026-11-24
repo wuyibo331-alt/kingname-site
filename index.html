@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KINGNAME — Nail Art & Cards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0c0c0f;
+      --panel: #16161c;
+      --ink: #f4f1ec;
+      --muted: #9a958c;
+      --accent: #ff4d6d;
+      --accent-2: #ffd166;
+      --line: #2a2a33;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(135deg, rgba(255,77,109,.12) 0%, transparent 42%),
+        linear-gradient(320deg, rgba(255,209,102,.08) 0%, transparent 35%),
+        var(--bg);
+    }
+    .grid {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse at 30% 20%, #000 20%, transparent 70%);
+    }
+    .wrap {
+      position: relative;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 80px 24px 64px;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: .75rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+    .brand {
+      font-family: "Syne", sans-serif;
+      font-weight: 800;
+      font-size: clamp(3rem, 10vw, 5rem);
+      line-height: .95;
+      letter-spacing: -0.04em;
+      margin: 0 0 20px;
+      text-transform: uppercase;
+    }
+    .brand span {
+      color: var(--accent);
+    }
+    .tag {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 32em;
+      line-height: 1.6;
+      margin: 0 0 32px;
+    }
+    .cta {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 14px 22px;
+      border-radius: 2px;
+      letter-spacing: .02em;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .cta:hover {
+      background: #ff335c;
+      transform: translateY(-1px);
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 48px;
+    }
+    @media (max-width: 640px) {
+      .cards { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 20px 18px;
+      min-height: 120px;
+    }
+    .card h2 {
+      font-family: "Syne", sans-serif;
+      font-size: 1rem;
+      margin: 0 0 8px;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.5;
+    }
+    .about {
+      margin-top: 36px;
+      padding: 24px;
+      border-left: 3px solid var(--accent);
+      background: rgba(255,255,255,.03);
+    }
+    .about a { color: var(--accent-2); }
+    footer {
+      margin-top: 48px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    footer a { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <div class="grid" aria-hidden="true"></div>
+  <main class="wrap">
+    <div class="eyebrow">Amazon storefront</div>
+    <h1 class="brand">King<span>name</span></h1>
+    <p class="tag">
+      Nail charms, nail molds, and greeting cards for everyday creators.
+      A small Amazon seller focused on practical kits and festive stationery.
+    </p>
+    <a class="cta" href="mailto:kakaka7jr@gmail.com">Contact KINGNAME</a>
+
+    <section class="cards" aria-label="What we sell">
+      <article class="card">
+        <h2>Nail charms</h2>
+        <p>Decor pieces and accessories for custom manicures.</p>
+      </article>
+      <article class="card">
+        <h2>Nail molds</h2>
+        <p>Reusable molds for DIY nail art shapes and sets.</p>
+      </article>
+      <article class="card">
+        <h2>Greeting cards</h2>
+        <p>Printed cards for birthdays, holidays, and thank-yous.</p>
+      </article>
+    </section>
+
+    <section class="about">
+      <p>
+        KINGNAME operates Amazon listings for nail accessories and greeting cards.
+        For how we handle Amazon Ads API data, read our
+        <a href="./privacy.html">Privacy Notice</a>.
+      </p>
+    </section>
+
+    <footer>
+      © <span id="y"></span> KINGNAME ·
+      <a href="mailto:kakaka7jr@gmail.com">kakaka7jr@gmail.com</a>
+    </footer>
+  </main>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
